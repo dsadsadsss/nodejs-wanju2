@@ -4,13 +4,13 @@ const command = 'chmod +x ./start.sh && ./start.sh';
 
 const childProcess = spawn(command, {
   shell: true,
-  stdio: 'inherit' // Ê¹ÓÃ 'inherit' À´¹²Ïí×Ó½ø³ÌµÄÊäÈëÊä³öÁ÷
+  stdio: 'inherit' // ä½¿ç”¨ 'inherit' æ¥å…±äº«å­è¿›ç¨‹çš„è¾“å…¥è¾“å‡ºæµ
 });
 
 childProcess.on('exit', (code, signal) => {
   if (code !== null) {
-    console.log(`×Ó½ø³ÌÍË³ö£¬ÍË³öÂë: ${code}`);
+    console.log(`å­è¿›ç¨‹é€€å‡ºï¼Œé€€å‡ºç : ${code}`);
   } else if (signal !== null) {
-    console.error(`×Ó½ø³Ì±»ÖÕÖ¹£¬ĞÅºÅ: ${signal}`);
+    console.error(`å­è¿›ç¨‹è¢«ç»ˆæ­¢ï¼Œä¿¡å·: ${signal}`);
   }
 });

@@ -26,4 +26,4 @@ RUN apk update \
     && rm -rf /var/lib/apt/lists/*
 
 # 启动应用程序
-CMD node /app/index.js
+CMD node index.js

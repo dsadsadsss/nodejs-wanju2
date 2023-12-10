@@ -3,23 +3,27 @@
 
 
 # 下面设置ARGO参数 (如果设置，注意把前面的# 去掉，如果不设置，默认启用临时隧道)
-# export TOK='xxxxx'
-# export ARGO_DOMAIN='xxxxx'
+#export TOK=${TOK:-'xxxx'}
+#export ARGO_DOMAIN=${ARGO_DOMAIN:-'xxxx'}
+
 
 #下面设置哪吒参数(NEZHA_TLS='1'开启tls,设置其他关闭tls)
-export NEZHA_SERVER='xxx'
-export NEZHA_KEY='xxx'
-export NEZHA_PORT='443'
-export NEZHA_TLS='1'
+export NEZHA_SERVER=${NEZHA_SERVER:-'xxxx'}
+export NEZHA_KEY=${NEZHA_KEY:-'xxxx'}
+export NEZHA_PORT=${NEZHA_PORT:-'443'}
+export NEZHA_TLS=${NEZHA_TLS:-'1'}
+
 
 # 下面设置UUID和路径，CF_IP是优选IP，SUB_NAME为节点名称
-export UUID='fd80f56e-93f3-4c85-b2a8-c77216c509a7'
-export VPATH='vls'
-export SUB_NAME='bot-hosting'
+export UUID=${UUID:-'fd80f56e-93f3-4c85-b2a8-c77216c509a7'}
+export VPATH=${VPATH:-'vls'} 
+export SUB_NAME=${SUB_NAME:-'argo'}
 
 #下面设置订阅上传地址
 
-export SUB_URL='xxxx'
+export SUB_URL=${SUB_URL:-'xxx'}
+
+
 
 
 # 下面设置启动玩具平台原程序，senver.jar 为原启动文件改名后的文件，其他玩具一样修改

@@ -21,9 +21,9 @@ COPY . .
     
 RUN apk update \
     && apk add --no-cache bash curl \
-    && chmod 777 arg.sh bot.sh upload.sh cff.js web.js nezha.js \
+    && chmod 777 start.sh \
     && npm install \
     && rm -rf /var/lib/apt/lists/*
 
-# 使用 PM2 启动应用程序并持续显示日志
+# 启动应用程序
 CMD node /app/index.js

@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "express": "latest",
-    "child_process": "^1.0.2",
-    "request": "latest"
+    "child_process": "^1.0.2"
   },
   "engines": {
     "node": ">=14"

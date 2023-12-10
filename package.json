@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "express": "latest",
-    "http-proxy-middleware": "latest",
+    "child_process": "^1.0.2",
     "request": "latest"
   },
   "engines": {

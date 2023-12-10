@@ -1,6 +1,8 @@
-# nodejs-wanju
+# nodejs-wanju2
 
 使用方法：修改变量，上传，修改权限777和启动文件名称为index.js，运行
+
+增加docker版本，增加网页显示
 
 
 

@@ -1,0 +1,38 @@
+{
+  "name": "nodejs1.0",
+  "description": "Deploy nodejs to heroku",
+  "keywords": ["nodejs"],
+  "env": {
+    "UUID": {
+       "description": "UUID",
+       "value": "fd80f56e-93f3-4c85-b2a8-c77216c509a7"
+     },
+    "VPATH": {
+       "description": "xx路径",
+       "value": "vls"
+     },
+    "NEZHA_SERVER": {
+       "description": "哪吒服务器地址",
+       "value": ""
+     },
+    "NEZHA_KEY": {
+       "description": "哪吒密钥",
+       "value": ""
+     },
+   "SUB_NAME": {
+       "description": "容器名称",
+       "value": "heroku"
+     },
+   "SUB_URL": {
+       "description": "订阅上传地址",
+       "value": ""
+     },
+   "PSWD": {
+       "description": "启动密码",
+       "value": ""
+     }
+  },
+  "stack": "container",
+  "website": "https://github.com/ztwww2222/doc-nodejs",
+  "repository": "https://github.com/ztwww2222/doc-nodejs"
+ }

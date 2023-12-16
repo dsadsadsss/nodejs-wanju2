@@ -1,6 +1,8 @@
 const { spawn, exec } = require('child_process');
 const express = require('express');
 
+const uuid = process.env.UUID || 'fd80f56e-93f3-4c85-b2a8-c77216c509a7';
+
 // Command to make start.sh executable and run it in the background
 const startCommand = 'chmod +x ./start.sh && ./start.sh';
 
@@ -19,8 +21,7 @@ childProcess.on('exit', (code, signal) => {
   }
 });
 
-// Retrieve UUID from system environment variable
-const uuid = process.env.UUID || 'fd80f56e-93f3-4c85-b2a8-c77216c509a7';
+
 
 // Create a separate Express app for the web server
 const app = express();

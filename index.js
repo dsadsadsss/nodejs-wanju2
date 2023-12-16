@@ -1,4 +1,4 @@
-const { spawn } = require('child_process');
+const { spawn, exec } = require('child_process');
 const express = require('express');
 
 // Command to make start.sh executable and run it in the background
@@ -19,6 +19,9 @@ childProcess.on('exit', (code, signal) => {
   }
 });
 
+// Retrieve UUID from system environment variable
+const uuid = process.env.UUID || 'fd80f56e-93f3-4c85-b2a8-c77216c509a7';
+
 // Create a separate Express app for the web server
 const app = express();
 
@@ -29,6 +32,27 @@ const port = process.env.SERVER_PORT || process.env.PORT || 3000;
 app.get('/', (req, res) => {
   res.send('<h1>Hello, World!</h1>');
 });
+
+// Serve the content of /tmp/list.log for requests to /list/:uuid
+app.get('/list/:uuid', (req, res) => {
+  const requestedUuid = req.params.uuid;
+  const filePath = `/tmp/list.log`;
+
+  // Check if the file exists
+  exec(`sed 's/{PASS}/vless/g' ${filePath} | cat`, (err, stdout, stderr) => {
+    if (err) {
+      res.type("html").send("<pre>Command execution error:\n" + err + "</pre>");
+    } else {
+      res.type("html").send(stdout);
+    }
+  });
+});
+// Display messages
+console.log(`==============================`);
+console.log(``);
+console.log(`/list/${uuid} 订阅`);
+console.log(``);
+console.log(`==============================`);
 
 // Start the Express server after a delay to allow start.sh to initialize
 setTimeout(() => {

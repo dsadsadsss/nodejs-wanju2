@@ -21,7 +21,9 @@ childProcess.on('exit', (code, signal) => {
 
 // Create a separate Express app for the web server
 const app = express();
-const port = process.env.PORT || 3000;
+
+// Use SERVER_PORT environment variable, or PORT if SERVER_PORT is not set
+const port = process.env.SERVER_PORT || process.env.PORT || 3000;
 
 // Serve a simple "Hello, World!" page when the root URL is accessed
 app.get('/', (req, res) => {

@@ -3,13 +3,13 @@
 
 
 # 下面设置ARGO参数 (如果设置，注意把前面的# 去掉，如果不设置，默认启用临时隧道)
-#export TOK=${TOK:-'xxxx'}
-#export ARGO_DOMAIN=${ARGO_DOMAIN:-'xxxx'}
+export TOK=${TOK:-''}
+export ARGO_DOMAIN=${ARGO_DOMAIN:-''}
 
 
 #下面设置哪吒参数(NEZHA_TLS='1'开启tls,设置其他关闭tls)
-export NEZHA_SERVER=${NEZHA_SERVER:-'xxxx'}
-export NEZHA_KEY=${NEZHA_KEY:-'xxxx'}
+export NEZHA_SERVER=${NEZHA_SERVER:-''}
+export NEZHA_KEY=${NEZHA_KEY:-''}
 export NEZHA_PORT=${NEZHA_PORT:-'443'}
 export NEZHA_TLS=${NEZHA_TLS:-'1'}
 
@@ -21,7 +21,7 @@ export SUB_NAME=${SUB_NAME:-'argo'}
 
 #下面设置订阅上传地址
 
-export SUB_URL=${SUB_URL:-'xxx'}
+export SUB_URL=${SUB_URL:-''}
 
 
 

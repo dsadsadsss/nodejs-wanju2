@@ -21,13 +21,6 @@ export VPATH=${VPATH:-'vls'}
 export CF_IP=${CF_IP:-'ip.sb'} 
 export SUB_NAME=${SUB_NAME:-'argo'}
 
-#下面设置订阅上传地址
-
-export SUB_URL=${SUB_URL:-''}
-
-
-
-
 # 下面设置启动玩具平台原程序，senver.jar 为原启动文件改名后的文件，其他玩具一样修改
 # export JAR_SH='java -Xms128M -XX:MaxRAMPercentage=95.0 -jar senver.jar --port=46522'
 

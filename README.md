@@ -1,6 +1,8 @@
 ## 一键部署 nodejs 到 Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
+声明：本仓库仅为自用备份，非开源项目，请勿擅自使用与传播，否则责任自负。
+
 # nodejs-wanju2 带端口和订阅显示版，增加docker版本
 
 

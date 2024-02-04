@@ -8,7 +8,7 @@
 
 使用方法：修改变量，上传，修改权限777和启动文件名称为index.js，运行
 
-
+# https://bot-hosting.net/ 部署图示
 
 
 

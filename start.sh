@@ -24,7 +24,8 @@ export SUB_NAME=${SUB_NAME:-'argo'}
 # 下面设置启动玩具平台原程序，senver.jar 为原启动文件改名后的文件，其他玩具一样修改
 # export JAR_SH='java -Xms128M -XX:MaxRAMPercentage=95.0 -jar senver.jar --port=46522'
 
-
+# 设置是否显示日志，默认显示，填no不显示，yes显示
+# export RIZHI='no'
 
  ## ===========================================2、启动程序=============================================##
 if command -v curl &>/dev/null; then

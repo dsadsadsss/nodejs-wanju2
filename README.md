@@ -6,7 +6,7 @@
 # nodejs-wanju2 带端口和订阅显示版，增加docker版本
 
 
-使用方法：修改变量，上传，修改权限777和启动文件名称为index.js，运行
+使用方法：修改变量，上传，修改start.sh权限777，启动文件名称必须为index.js，然后即可启动玩具
 
 # https://bot-hosting.net/ 部署图示:
 

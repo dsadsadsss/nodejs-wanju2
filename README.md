@@ -3,12 +3,15 @@
 
 声明：本仓库仅为自用备份，非开源项目，请勿擅自使用与传播，否则责任自负。
 
-# nodejs-wanju2 带端口和订阅显示版，增加docker版本
+# nodejs-wanju2 
 
+带端口和订阅显示版，增加docker版本，支持玩具与docker容器部署
 
 使用方法：修改变量，上传，修改start.sh权限777，启动文件名称必须为index.js，然后即可启动玩具
 
-# https://bot-hosting.net/ 部署图示:
+# docker平台之间选择仓库即可，Heroku平台支持一键部署
+
+# 玩具平台以https://bot-hosting.net为例，部署示例图:
 
 上传index.js、package.json、start.sh三个文件即可
 

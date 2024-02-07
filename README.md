@@ -9,7 +9,7 @@
 
 使用方法：修改变量，上传，修改start.sh权限777，启动文件名称必须为index.js，然后即可启动玩具
 
-## docker平台之间选择仓库即可，Heroku平台支持一键部署
+## docker平台选择本仓库即可，Heroku平台支持一键部署
 
 ## 玩具平台以https://bot-hosting.net为例，部署示例图:
 

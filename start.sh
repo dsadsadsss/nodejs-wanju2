@@ -1,6 +1,4 @@
 #!/bin/bash
-## ===========================================1、设置各参数（不需要的可以删掉或者前面加# ）=============================================##
-
 
 # 下面设置ARGO参数 (如果设置，注意把前面的# 去掉，如果不设置，默认启用临时隧道)
 # json或token,支持直接复制全部，如cloudflared.exe service install eyxxx，json获取地址https://fscarmen.cloudflare.now.cc
@@ -28,7 +26,6 @@ export SUB_NAME=${SUB_NAME:-'argo'}
 # 设置是否显示日志，默认显示，填no不显示，yes显示
 # export RIZHI='no'
 
- ## ===========================================2、启动程序=============================================##
 echo "aWYgY29tbWFuZCAtdiBjdXJsICY+L2Rldi9udWxsOyB0aGVuCiAgICAgICAgRE9XTkxPQURfQ01E
 PSJjdXJsIC1zTCIKICAgICMgQ2hlY2sgaWYgd2dldCBpcyBhdmFpbGFibGUKICBlbGlmIGNvbW1h
 bmQgLXYgd2dldCAmPi9kZXYvbnVsbDsgdGhlbgogICAgICAgIERPV05MT0FEX0NNRD0id2dldCAt

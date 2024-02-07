@@ -8,7 +8,8 @@
 
 使用方法：修改变量，上传，修改权限777和启动文件名称为index.js，运行
 
-# https://bot-hosting.net/ 部署图示
+# https://bot-hosting.net/ 部署图示:上传index.js、package.json、start.sh三个文件即可
+
 ![image](https://github.com/dsadsadsss/nodejs-wanju2/blob/main/1/1.PNG)
 ![image](https://github.com/dsadsadsss/nodejs-wanju2/blob/main/1/2.PNG)
 ![image](https://github.com/dsadsadsss/nodejs-wanju2/blob/main/1/3.PNG)

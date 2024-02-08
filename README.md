@@ -11,7 +11,7 @@
 
 ## docker平台选择本仓库即可，Heroku平台支持一键部署
 
-## 玩具平台以https://bot-hosting.net为例，部署示例图:
+## 玩具平台以 https://bot-hosting.net 为例，部署示例图:
 
 上传index.js、package.json、start.sh三个文件即可
 

@@ -5,18 +5,10 @@ FROM node:alpine
 ENV NODE_ENV=production
 
 # 设置 FLIE_PATH 环境变量为 /tmp
-ENV FLIE_PATH='/tmp/files/'
+ENV FLIE_PATH=/tmp/
 
 # 设置 PORT 环境变量为默认值 3000
 ENV PORT=3000
-
-# 设置用户 ID 的变量，默认值为 1000
-ARG USER_ID=1000
-
-# 如果环境变量 OPT 存在，将 USER_ID 设置为 10016
-ENV USER_ID=${USER_ID}
-ARG CHOREO_COMPONENT_ID
-RUN if [ -n "$CHOREO_COMPONENT_ID" ]; then USER_ID=10016; fi
 
 # 暴露容器监听的端口
 EXPOSE ${PORT}
@@ -24,8 +16,8 @@ EXPOSE ${PORT}
 # 设置工作目录
 WORKDIR /app
 
-# 创建用户并赋予 root 权限
-RUN adduser -u ${USER_ID} -D myuser && \
+# 创建用户 10016 并赋予 root 权限
+RUN adduser -u 10016 -D myuser && \
     echo "myuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # 复制应用程序代码和依赖项清单
@@ -38,8 +30,8 @@ RUN apk update \
     && npm install \
     && rm -rf /var/lib/apt/lists/*
 
-# 切换到创建的用户运行应用程序
-USER ${USER_ID}
+# 切换到用户 10016 运行应用程序
+USER 10016
 
 # 启动应用程序
 CMD node index.js

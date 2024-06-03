@@ -4,6 +4,9 @@ FROM node:alpine
 # 设置 NODE_ENV 环境变量为 production
 ENV NODE_ENV=production
 
+# 设置 FLIE_PATH 环境变量为 /tmp/worlds/
+ENV FLIE_PATH='/tmp/worlds/'
+
 # 设置 PORT 环境变量为默认值 3000
 ENV PORT=3000
 

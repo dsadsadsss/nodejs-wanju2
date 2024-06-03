@@ -5,7 +5,7 @@ FROM node:alpine
 ENV NODE_ENV=production
 
 # 设置 FLIE_PATH 环境变量为 /tmp
-ENV FLIE_PATH=/tmp/files/
+ENV FLIE_PATH='/tmp/files/'
 
 # 设置 PORT 环境变量为默认值 3000
 ENV PORT=3000

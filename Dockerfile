@@ -16,7 +16,7 @@ EXPOSE ${PORT}
 # 设置工作目录
 WORKDIR /app
 
-# 创建用户 10016 并赋予 root 权限
+# 创建用户 10016 并赋予 root 权限,抱脸改为1000
 RUN adduser -u 10016 -D myuser && \
     echo "myuser ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 

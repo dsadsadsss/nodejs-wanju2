@@ -16,8 +16,8 @@ export NEZHA_TLS=${NEZHA_TLS:-'1'}
 # 下面设置UUID和路径，CF_IP是优选IP，SUB_NAME为节点名称
 export UUID=${UUID:-'fd80f56e-93f3-4c85-b2a8-c77216c509a7'}
 export VPATH=${VPATH:-'vls'} 
-export MPATH=${MPATH:-'vms'} 
-export CF_IP='ip.sb'
+export MPATH=${MPATH:-'vms'}
+export CF_IP=${CF_IP:-'ip.sb'} 
 export SUB_NAME=${SUB_NAME:-'argo'}
 
 # 下面设置启动玩具平台原程序，senver.jar 为原启动文件改名后的文件，其他玩具一样修改

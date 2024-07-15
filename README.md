@@ -1,5 +1,10 @@
 ## 一键部署 nodejs 到 Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+### 7.15号更新：
+
+1.增加参数设置，允许设置xray端口，路径等
+
+2.增加参数，允许修改三件套文件名称，防止个别服务器封禁关键词
 
 声明：本仓库仅为自用备份，非开源项目，请勿擅自使用与传播，否则责任自负。
 

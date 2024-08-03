@@ -15,8 +15,9 @@ WORKDIR /app
 
 # 复制应用程序代码和依赖项清单
 
-COPY . .
-
+COPY index.js ./
+COPY package.json ./
+COPY start.sh ./
 # 安装应用程序依赖
     
 RUN apk update \

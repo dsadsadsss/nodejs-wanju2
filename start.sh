@@ -16,7 +16,7 @@ export VL_PORT=${VL_PORT:-'8002'}   # vles 端口
 export VM_PORT=${VM_PORT:-'8001'} # vmes 端口
 export SUB_NAME=${SUB_NAME:-'VPS'} # 节点名称
 
-# reality相关设置(不能同时开游戏)
+# reality相关设置(不能同时开游戏，把nodejs端口改成别的或者使用nodejs1)
 export SERVER_PORT="${SERVER_PORT:-${PORT:-443}}" # 端口
 export SNI=${SNI:-'www.apple.com'} # tls网站
 

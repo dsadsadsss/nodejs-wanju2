@@ -1,5 +1,7 @@
 ## 一键部署 nodejs 到 Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+特点:支持订阅，支持Argo临时，固定隧道，支持三种协议
+
 ### 7.15号更新：
 
 1.增加参数设置，允许设置xray端口，路径等

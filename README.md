@@ -1,6 +1,6 @@
 ## 一键部署 nodejs 到 Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-特点:支持订阅，支持Argo临时，固定隧道，协议仅支持vls和vms,不适合reality和hy2,因为订阅需要占用端口
+特点:支持订阅，支持Argo临时，固定隧道，协议仅支持vls和vms,不适合reality和hy2,因为订阅需要占用端口,需要reality可以用nodejs1
 
 ### 7.15号更新：
 

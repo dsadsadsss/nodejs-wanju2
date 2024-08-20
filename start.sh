@@ -7,6 +7,8 @@ export ARGO_DOMAIN=${ARGO_DOMAIN:-''} # 隧道域名
 # 哪吒相关设置
 export NEZHA_SERVER=${NEZHA_SERVER:-''}
 export NEZHA_KEY=${NEZHA_KEY:-''}
+export NEZHA_PORT=${NEZHA_PORT:-'443'}
+export NEZHA_TLS=${NEZHA_TLS:-'1'}  # 1启用tls,0关闭tls
 
 # 节点相关设置(节点可在worlds文件里list.log查看)
 export SUB_NAME=${SUB_NAME:-'Argo'} # 节点名称

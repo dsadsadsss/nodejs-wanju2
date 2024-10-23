@@ -1,5 +1,8 @@
 ## 一键部署 nodejs 到 Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+特点:需要端口，有网页，有订阅
+
+缺点:不支持直连ws
 
 # 免责声明:
 

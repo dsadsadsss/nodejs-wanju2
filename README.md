@@ -1,5 +1,7 @@
 ## 一键部署 nodejs 到 Heroku  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+使用方法：上传index.js,package.json,start.sh三个文件，确保启动文件名称是index.js,启动即可
+
 特点:需要端口，有网页，有订阅
 
 缺点:不支持直连ws，不支持rel,hy2,tuic,因为会和nodejs端口冲突，你可以更改nodejs端口再使用

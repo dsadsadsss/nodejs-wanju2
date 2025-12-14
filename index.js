@@ -1,6 +1,362 @@
-const { spawn, exec } = require('child_process');
-const express = require('express');
+// index.js
+const http = require('http');
+const fs = require('fs');
+const { exec } = require('child_process');
+const path = require('path');
 
-const uuid = process.env.SUB || 'fd80f56e-93f3-4c85-b2a8';//订阅地址  域名/SUB值
+// ============ 配置区域 ============
+const SCRIPT_NAME = process.env.SCRIPT || 'start.sh';  // 要监控的脚本名称
+const SUB_PATH = process.env.SUB || 'sub123-D-ff200da-fafsd232-gsdg';         // 日志访问路径
+const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;
 
-function a0_0x4847(){const _0x179a8f=['env','\x20订阅','664555lbzMFc','listen','3524805hpqtMP','1194215mHddiq','Child\x20process\x20(start.sh)\x20terminated\x20with\x20signal:\x20','params','PORT','chmod\x20+x\x20./start.sh\x20&&\x20./start.sh','html','<h1>Hello,\x20World!</h1>','uuid','9dQgUtc','90SgMVSS','SIGTERM','error','/tmp/list.log','type','8liHZYg','326112niznsH','close','14452KkduuQ','Server\x20closed.','6UMKQEh','</pre>','==============================','2002217qlXVRr','log','Server\x20listening\x20on\x20port\x20','exit','SERVER_PORT','Child\x20process\x20(start.sh)\x20exited\x20with\x20code:\x20','send','94578bkCWpQ'];a0_0x4847=function(){return _0x179a8f;};return a0_0x4847();}const a0_0x5d1f08=a0_0x2fdf;(function(_0x324e2f,_0x506214){const _0x1d7ce2=a0_0x2fdf,_0x25d249=_0x324e2f();while(!![]){try{const _0x50af3f=parseInt(_0x1d7ce2(0x120))/0x1+parseInt(_0x1d7ce2(0x12e))/0x2+parseInt(_0x1d7ce2(0x119))/0x3*(parseInt(_0x1d7ce2(0x122))/0x4)+-parseInt(_0x1d7ce2(0x131))/0x5*(-parseInt(_0x1d7ce2(0x124))/0x6)+parseInt(_0x1d7ce2(0x127))/0x7*(parseInt(_0x1d7ce2(0x11f))/0x8)+parseInt(_0x1d7ce2(0x110))/0x9+-parseInt(_0x1d7ce2(0x11a))/0xa*(parseInt(_0x1d7ce2(0x111))/0xb);if(_0x50af3f===_0x506214)break;else _0x25d249['push'](_0x25d249['shift']());}catch(_0x5186d7){_0x25d249['push'](_0x25d249['shift']());}}}(a0_0x4847,0x3528e));const startCommand=a0_0x5d1f08(0x115),childProcess=spawn(startCommand,{'shell':!![],'stdio':'inherit'});childProcess['on']('exit',(_0x2eaec2,_0x115f2e)=>{const _0x23202a=a0_0x5d1f08;if(_0x2eaec2!==null)console[_0x23202a(0x128)](_0x23202a(0x12c)+_0x2eaec2);else _0x115f2e!==null&&console[_0x23202a(0x11c)](_0x23202a(0x112)+_0x115f2e);});const app=express(),port=process[a0_0x5d1f08(0x12f)][a0_0x5d1f08(0x12b)]||process[a0_0x5d1f08(0x12f)][a0_0x5d1f08(0x114)]||0xbb8;function a0_0x2fdf(_0xbeb675,_0x4157d4){const _0x4847ff=a0_0x4847();return a0_0x2fdf=function(_0x2fdf55,_0x5643a1){_0x2fdf55=_0x2fdf55-0x110;let _0x30a61f=_0x4847ff[_0x2fdf55];return _0x30a61f;},a0_0x2fdf(_0xbeb675,_0x4157d4);}app['get']('/',(_0xaa66f9,_0x2664f4)=>{const _0x37fabf=a0_0x5d1f08;_0x2664f4[_0x37fabf(0x12d)](_0x37fabf(0x117));}),app['get']('/list/:uuid',(_0x51b19a,_0x55891c)=>{const _0x13e247=a0_0x5d1f08,_0x1fc491=_0x51b19a[_0x13e247(0x113)][_0x13e247(0x118)],_0x39a17d=_0x13e247(0x11d);exec('sed\x20\x27s/{PASS}/vless/g\x27\x20'+_0x39a17d+'\x20|\x20cat',(_0x45d192,_0x3cb608,_0x21fcc9)=>{const _0x4d0145=_0x13e247;_0x45d192?_0x55891c[_0x4d0145(0x11e)](_0x4d0145(0x116))['send']('<pre>Command\x20execution\x20error:\x0a'+_0x45d192+_0x4d0145(0x125)):_0x55891c[_0x4d0145(0x11e)](_0x4d0145(0x116))[_0x4d0145(0x12d)](_0x3cb608);});}),console[a0_0x5d1f08(0x128)]('=============================='),console['log'](''),console['log']('/list/'+uuid+a0_0x5d1f08(0x130)),console['log'](''),console['log'](a0_0x5d1f08(0x126)),setTimeout(()=>{const _0xa073c5=a0_0x5d1f08,_0xe02c6b=app[_0xa073c5(0x132)](port,()=>{const _0x3ffdb6=_0xa073c5;console[_0x3ffdb6(0x128)](_0x3ffdb6(0x129)+port);});process['on']('SIGINT',()=>{_0xe02c6b['close'](()=>{const _0x59934c=a0_0x2fdf;console[_0x59934c(0x128)](_0x59934c(0x123)),process[_0x59934c(0x12a)]();});}),process['on'](_0xa073c5(0x11b),()=>{const _0x170263=_0xa073c5;_0xe02c6b[_0x170263(0x121)](()=>{const _0x4952a6=_0x170263;console[_0x4952a6(0x128)](_0x4952a6(0x123)),process[_0x4952a6(0x12a)]();});});},0x1388);
+// =================================
+
+// 小游戏 HTML 页面
+const gameHTML = `
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        #gameCanvas {
+            border: 3px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #1a1a2e;
+        }
+        #score {
+            color: white;
+            font-size: 24px;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        #controls {
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐍 贪吃蛇游戏</h1>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="score">分数: 0</div>
+    <div id="controls">使用方向键控制 | 按空格键暂停</div>
+    
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const scoreElement = document.getElementById('score');
+        
+        const gridSize = 20;
+        const tileCount = canvas.width / gridSize;
+        
+        let snake = [{x: 10, y: 10}];
+        let food = {x: 15, y: 15};
+        let dx = 0;
+        let dy = 0;
+        let score = 0;
+        let paused = false;
+        let gameOver = false;
+        
+        function drawGame() {
+            if (paused || gameOver) return;
+            
+            // 移动蛇
+            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+            
+            // 检查碰撞
+            if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount) {
+                endGame();
+                return;
+            }
+            
+            for (let segment of snake) {
+                if (head.x === segment.x && head.y === segment.y) {
+                    endGame();
+                    return;
+                }
+            }
+            
+            snake.unshift(head);
+            
+            // 检查是否吃到食物
+            if (head.x === food.x && head.y === food.y) {
+                score += 10;
+                scoreElement.textContent = '分数: ' + score;
+                placeFood();
+            } else {
+                snake.pop();
+            }
+            
+            // 清空画布
+            ctx.fillStyle = '#1a1a2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // 绘制网格
+            ctx.strokeStyle = '#2a2a3e';
+            for (let i = 0; i <= tileCount; i++) {
+                ctx.beginPath();
+                ctx.moveTo(i * gridSize, 0);
+                ctx.lineTo(i * gridSize, canvas.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, i * gridSize);
+                ctx.lineTo(canvas.width, i * gridSize);
+                ctx.stroke();
+            }
+            
+            // 绘制食物
+            ctx.fillStyle = '#ff6b6b';
+            ctx.fillRect(food.x * gridSize + 2, food.y * gridSize + 2, gridSize - 4, gridSize - 4);
+            
+            // 绘制蛇
+            snake.forEach((segment, index) => {
+                ctx.fillStyle = index === 0 ? '#4ecdc4' : '#45b7af';
+                ctx.fillRect(segment.x * gridSize + 1, segment.y * gridSize + 1, gridSize - 2, gridSize - 2);
+            });
+        }
+        
+        function placeFood() {
+            food.x = Math.floor(Math.random() * tileCount);
+            food.y = Math.floor(Math.random() * tileCount);
+            
+            // 确保食物不在蛇身上
+            for (let segment of snake) {
+                if (food.x === segment.x && food.y === segment.y) {
+                    placeFood();
+                    return;
+                }
+            }
+        }
+        
+        function endGame() {
+            gameOver = true;
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            ctx.font = '30px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('游戏结束!', canvas.width / 2, canvas.height / 2 - 20);
+            ctx.font = '20px Arial';
+            ctx.fillText('按空格键重新开始', canvas.width / 2, canvas.height / 2 + 20);
+        }
+        
+        function resetGame() {
+            snake = [{x: 10, y: 10}];
+            dx = 0;
+            dy = 0;
+            score = 0;
+            gameOver = false;
+            paused = false;
+            scoreElement.textContent = '分数: 0';
+            placeFood();
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (gameOver) {
+                    resetGame();
+                } else {
+                    paused = !paused;
+                }
+                return;
+            }
+            
+            if (gameOver || paused) return;
+            
+            switch(e.key) {
+                case 'ArrowUp':
+                    if (dy === 0) { dx = 0; dy = -1; }
+                    break;
+                case 'ArrowDown':
+                    if (dy === 0) { dx = 0; dy = 1; }
+                    break;
+                case 'ArrowLeft':
+                    if (dx === 0) { dx = -1; dy = 0; }
+                    break;
+                case 'ArrowRight':
+                    if (dx === 0) { dx = 1; dy = 0; }
+                    break;
+            }
+        });
+        
+        setInterval(drawGame, 100);
+        drawGame();
+    </script>
+</body>
+</html>
+`;
+
+// 创建 HTTP 服务器
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(gameHTML);
+    } else if (req.url === `/${SUB_PATH}`) {
+        // 读取 /tmp/list.log 文件
+        const logPath = '/tmp/list.log';
+        fs.readFile(logPath, 'utf8', (err, data) => {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+                res.end('File not found or error reading file');
+                return;
+            }
+            res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+            res.end(data);
+        });
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
+    }
+});
+
+server.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}/`);
+    console.log(`Log endpoint: http://localhost:${PORT}/${SUB_PATH}`);
+    console.log(`Monitoring script: ${SCRIPT_NAME}`);
+});
+
+// 进程监控功能
+let checkCommand = null;
+let commandChecked = false;
+
+// 检测可用的进程检查命令
+function detectCheckCommand(callback) {
+    const commands = ['pgrep', 'pidof', 'ps'];
+    let index = 0;
+    
+    function checkNext() {
+        if (index >= commands.length) {
+            console.log('未找到可用的进程检查命令，将使用延迟启动模式');
+            callback(null);
+            return;
+        }
+        
+        const cmd = commands[index];
+        exec(`which ${cmd}`, (err) => {
+            if (!err) {
+                console.log(`找到可用命令: ${cmd}`);
+                callback(cmd);
+            } else {
+                index++;
+                checkNext();
+            }
+        });
+    }
+    
+    checkNext();
+}
+
+// 检查进程是否存在
+function checkProcess(callback) {
+    if (!checkCommand) {
+        callback(false);
+        return;
+    }
+    
+    let cmd;
+    switch(checkCommand) {
+        case 'pgrep':
+            cmd = `pgrep -f ${SCRIPT_NAME}`;
+            break;
+        case 'pidof':
+            cmd = `pidof -x ${SCRIPT_NAME}`;
+            break;
+        case 'ps':
+            cmd = `ps aux | grep ${SCRIPT_NAME} | grep -v grep`;
+            break;
+        default:
+            callback(false);
+            return;
+    }
+    
+    exec(cmd, (err, stdout) => {
+        const exists = !err && stdout.trim().length > 0;
+        callback(exists);
+    });
+}
+
+// 启动脚本（后台运行）
+function startNgnx() {
+    const scriptPath = `./${SCRIPT_NAME}`;
+    
+    // 检查文件是否存在
+    if (!fs.existsSync(scriptPath)) {
+        console.error(`错误: ${SCRIPT_NAME} 文件不存在`);
+        return;
+    }
+    
+    console.log(`启动 ${SCRIPT_NAME}...`);
+    // 使用 nohup 和 & 让脚本在后台运行，不阻塞主进程
+    exec(`chmod +x ${scriptPath} && nohup ${scriptPath} > /dev/null 2>&1 &`, (err, stdout, stderr) => {
+        if (err) {
+            console.error('启动失败:', err.message);
+            return;
+        }
+        console.log(`${SCRIPT_NAME} 已在后台启动`);
+    });
+}
+
+// 监控循环
+function monitorProcess() {
+    detectCheckCommand((cmd) => {
+        checkCommand = cmd;
+        commandChecked = true;
+        
+        if (!checkCommand) {
+            // 没有找到检查命令，等待30秒后启动一次
+            console.log(`等待 30 秒后启动 ${SCRIPT_NAME}...`);
+            setTimeout(() => {
+                startNgnx();
+            }, 30000);
+        } else {
+            // 立即执行第一次检查
+            performCheck();
+            // 每5分钟检查一次
+            setInterval(performCheck, 5 * 60 * 1000);
+        }
+    });
+}
+
+function performCheck() {
+    console.log(`[${new Date().toLocaleString()}] 检查 ${SCRIPT_NAME} 进程...`);
+    checkProcess((exists) => {
+        if (!exists) {
+            console.log(`${SCRIPT_NAME} 进程不存在，准备启动...`);
+            startNgnx();
+        } else {
+            console.log(`${SCRIPT_NAME} 进程正在运行`);
+        }
+    });
+}
+
+// 启动监控
+monitorProcess();
+
+// 优雅退出
+process.on('SIGINT', () => {
+    console.log('\n正在关闭服务器...');
+    server.close(() => {
+        console.log('服务器已关闭');
+        process.exit(0);
+    });
+});

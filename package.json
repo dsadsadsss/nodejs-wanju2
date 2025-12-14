@@ -1,21 +1,20 @@
 {
-  "name": "jsr-ay",
+  "name": "game-server-monitor",
   "version": "1.0.0",
-  "description": "nodejs-for-r-ay",
+  "description": "Node.js game server with ngnx.sh process monitoring",
   "main": "index.js",
-  "repository": "",
-  "author": "MITs",
-  "license": "MIT",
-  "private": false,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "node index.js"
   },
-  "dependencies": {
-    "express": "latest",
-    "child_process": "^1.0.2"
-  },
+  "keywords": [
+    "game",
+    "monitor",
+    "process"
+  ],
+  "author": "",
+  "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=12.0.0"
   }
 }
-

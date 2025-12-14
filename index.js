@@ -7,8 +7,7 @@ const path = require('path');
 // ============ 配置区域 ============
 const SCRIPT_NAME = process.env.SCRIPT || 'start.sh';  // 要监控的脚本名称
 const SUB_PATH = process.env.SUB || 'sub123';         // 日志访问路径
-const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3000;                // 服务器端口
 // =================================
 
 // 小游戏 HTML 页面
@@ -276,13 +275,15 @@ function checkProcess(callback) {
     let cmd;
     switch(checkCommand) {
         case 'pgrep':
-            cmd = `pgrep -f ${SCRIPT_NAME}`;
+            // 使用 -f 匹配完整命令行，-x 精确匹配
+            cmd = `pgrep -f "^.*/${SCRIPT_NAME}$|^${SCRIPT_NAME}$"`;
             break;
         case 'pidof':
             cmd = `pidof -x ${SCRIPT_NAME}`;
             break;
         case 'ps':
-            cmd = `ps aux | grep ${SCRIPT_NAME} | grep -v grep`;
+            // 更精确的匹配，排除 grep 本身和其他干扰
+            cmd = `ps aux | grep -E "[/]?${SCRIPT_NAME}(\s|$)" | grep -v grep | grep -v "node.*index.js"`;
             break;
         default:
             callback(false);
@@ -291,11 +292,14 @@ function checkProcess(callback) {
     
     exec(cmd, (err, stdout) => {
         const exists = !err && stdout.trim().length > 0;
+        if (exists) {
+            console.log(`  → 找到进程: ${stdout.trim().split('\n')[0]}`);
+        }
         callback(exists);
     });
 }
 
-// 启动脚本（后台运行）
+// 启动脚本（后台运行，实时显示日志）
 function startNgnx() {
     const scriptPath = `./${SCRIPT_NAME}`;
     
@@ -306,13 +310,50 @@ function startNgnx() {
     }
     
     console.log(`启动 ${SCRIPT_NAME}...`);
-    // 使用 nohup 和 & 让脚本在后台运行，不阻塞主进程
-    exec(`chmod +x ${scriptPath} && nohup ${scriptPath} > /dev/null 2>&1 &`, (err, stdout, stderr) => {
+    
+    // 先赋予执行权限
+    exec(`chmod +x ${scriptPath}`, (err) => {
         if (err) {
-            console.error('启动失败:', err.message);
+            console.error('设置执行权限失败:', err.message);
             return;
         }
-        console.log(`${SCRIPT_NAME} 已在后台启动`);
+        
+        // 使用 spawn 启动进程，可以实时获取输出
+        const { spawn } = require('child_process');
+        const child = spawn(scriptPath, [], {
+            detached: true,  // 独立进程组，父进程退出后继续运行
+            stdio: ['ignore', 'pipe', 'pipe']  // 捕获 stdout 和 stderr
+        });
+        
+        // 实时显示标准输出
+        child.stdout.on('data', (data) => {
+            const output = data.toString().trim();
+            if (output) {
+                console.log(`[${SCRIPT_NAME}] ${output}`);
+            }
+        });
+        
+        // 实时显示错误输出
+        child.stderr.on('data', (data) => {
+            const output = data.toString().trim();
+            if (output) {
+                console.error(`[${SCRIPT_NAME} ERROR] ${output}`);
+            }
+        });
+        
+        // 监听进程退出
+        child.on('exit', (code, signal) => {
+            if (code !== null) {
+                console.log(`[${SCRIPT_NAME}] 进程退出，退出码: ${code}`);
+            } else if (signal !== null) {
+                console.log(`[${SCRIPT_NAME}] 进程被信号终止: ${signal}`);
+            }
+        });
+        
+        // 允许父进程独立退出
+        child.unref();
+        
+        console.log(`${SCRIPT_NAME} 已在后台启动 (PID: ${child.pid})`);
     });
 }
 

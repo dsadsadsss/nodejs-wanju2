@@ -6,7 +6,7 @@ const path = require('path');
 
 // ============ 配置区域 ============
 const SCRIPT_NAME = process.env.SCRIPT || 'start.sh';  // 要监控的脚本名称
-const SUB_PATH = process.env.SUB || 'sub123-D-ff200da-fafsd232-gsdg';         // 日志访问路径
+const SUB_PATH = process.env.SUB || 'sub123';         // 日志访问路径
 const PORT = process.env.SERVER_PORT || process.env.PORT || 3000;
 
 // =================================

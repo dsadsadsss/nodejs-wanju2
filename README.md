@@ -2,6 +2,12 @@
 
 使用方法：上传index.js,package.json,start.sh三个文件，确保启动文件名称是index.js,启动即可
 
+#### linux系统：
+
+安装命令 apt update && apt install -y curl && npm install
+
+启动命令 npm start
+
 特点:需要端口，有网页，有订阅
 
 Docker部署设置端口3000

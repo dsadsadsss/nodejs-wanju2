@@ -4,7 +4,7 @@
 
 #### linux系统：
 
-安装命令 apt update && apt install -y curl && npm install
+安装命令 apt update && apt install -y curl procps && npm install
 
 启动命令 npm start
 
